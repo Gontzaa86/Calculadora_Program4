@@ -22,7 +22,11 @@ void main (void){
         mostrarMenu();
 
         scanf("%c", &opcion);
-        switch (opcion)
+
+        if ((opcion >= '1' && opcion <= '9') || opcion == 'q'){
+            /*Al recibir un numero grande como 67 de opcion, la variable al ser un char coge el numero como si fuese 6*/
+            fflush(stdin);
+            switch (opcion)
             {
             case '1':
                 printf("Introduce el primer numero:\n");
@@ -38,6 +42,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 scanf("%f", &num2);
                 printf("El resultado de la resta es %.2f\n", restar(num1, num2));
+                break;
 
             case '3':
                 printf("Introduce el primer numero:\n");
@@ -45,11 +50,17 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 scanf("%f", &num2);
                 printf("El resultado de la multiplicacion es %.2f\n", multiplicar(num1, num2));
+                break;
 
 
             default:
                 break;
         }
+        }else{
+            printf("Has introducido una opcion no disponible\n");
+
+        }
+
     fflush(stdin);
     } while (opcion != 'q');
     
