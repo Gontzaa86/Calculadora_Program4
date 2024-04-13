@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include "formula.h"
 #include "binario.h"
+#include <time.h>
 
 #define MAX_DIG 10
+#define FIC_LOG "log.txt"
 
 char mostrarMenu(){
     char opcion[2];
@@ -36,10 +38,22 @@ float obtenerDeTeclado(){
 }
 
 void main (void){
+
+    FILE* fichero_log = fopen(FIC_LOG, "a");
+
+    time_t tiempo_actual = time(NULL);
+    struct tm *local = localtime(&tiempo_actual);
+
+    char formato_tiempo[20];
+    strftime(formato_tiempo, sizeof(formato_tiempo), "%d/%m/%y %H:%M:%S", local);
+
+    fprintf(fichero_log, "[%s] Se ha iniciado el programa\n", formato_tiempo);
+
     char opcionTeclado;
     int numeroATransformarBinario;
     int ordenMatriz; 
     int determinante;
+    int **matriz;
     float num1;
     float num2;
 
@@ -51,6 +65,12 @@ void main (void){
         if ((opcionTeclado >= '1' && opcionTeclado <= '9') || opcionTeclado == 'q'){
             /*Al recibir un numero grande como 67 de opcion, la variable al ser un char coge el numero como si fuese 6*/
             fflush(stdin);
+            if (opcionTeclado == 'q'){
+                fprintf(fichero_log, "[%s] Se ha terminado el programa\n", formato_tiempo);
+            }else{
+                fprintf(fichero_log, "[%s] Se ha seleccionado la opcion %c del menu\n", formato_tiempo, opcionTeclado);
+            }
+            
             switch (opcionTeclado)
             {
             case '1':
@@ -103,7 +123,7 @@ void main (void){
                 printf("Ingresa el orden de la matriz cuadrada: \n");
                 scanf("%d", &ordenMatriz);
 
-                int **matriz = (int **)malloc(ordenMatriz * sizeof(int *));
+                matriz = (int **)malloc(ordenMatriz * sizeof(int *));
                 for (int i = 0; i < ordenMatriz; i++) {
                     matriz[i] = (int *)malloc(ordenMatriz * sizeof(int));
                 }
@@ -111,16 +131,17 @@ void main (void){
                 printf("Ingresa los elementos de la matriz:\n");
                 for (int i = 0; i < ordenMatriz; i++) {
                     for (int j = 0; j < ordenMatriz; j++) {
-                        printf("Ingresa el elemento [%i][%i]: \n", i+1, j+1);
-                        scanf("%d", &matriz[i][j]);
+                        printf("Ingresa el elemento [%i][%i]:", i+1, j+1);
+                        scanf("%i", &matriz[i][j]);
+                        
                     }
                 }
-
                 determinante = determinanteMatriz(matriz, ordenMatriz);
                 
+  
                 printf("La matriz completa:\n");
                 imprimirMatriz(matriz, ordenMatriz);
-                printf("El determinante es: %d\n", determinante);
+                printf("El determinante es: %i\n", determinante);
 
                 for (int i = 0; i < ordenMatriz; i++) {
                     free(matriz[i]);
@@ -147,7 +168,7 @@ void main (void){
         }
         }else{
             printf("Has introducido una opcion no disponible\n");
-
+            fprintf(fichero_log, "[%s] El usuario ha elegio una funcion no disponible",  formato_tiempo);
         }
 
     fflush(stdin);
