@@ -66,3 +66,17 @@ void main (void){
     
     
 }
+
+//Codigo utilizado para implementar la transormacion a binario
+/*
+    int numeroATransformar = 633; //Esta parte deberia cambiarse a scanf o a el resultado de la operación
+    InfoBinario ib = binarios(numeroATransformar);
+
+    printf("El numero binario de %i es: ", numeroATransformar);
+    for (int i = 0; i < ib.cantidadBits; i++)
+    {
+        printf("%i", ib.numeroBinario[i]);
+    }
+
+    free(ib.numeroBinario);
+*/
