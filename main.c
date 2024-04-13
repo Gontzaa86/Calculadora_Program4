@@ -4,6 +4,8 @@
 #include "formula.h"
 #include "binario.h"
 
+#define MAX_DIG 10
+
 char mostrarMenu(){
     char opcion[2];
     printf("\n");
@@ -14,6 +16,7 @@ char mostrarMenu(){
     printf("4. Realiza una division\n");
     printf("5. Eleva un numero\n");
     printf("6. Realiza una raiz cuadrada\n");
+    printf("7. Calcula el determinante de una matriz cuadrada\n");
     printf("8. Traduce un numero a binario\n");
     printf("Pulsa 'q' para terminar\n");
 
@@ -24,9 +27,19 @@ char mostrarMenu(){
 
 }
 
+float obtenerDeTeclado(){
+    float num;
+    char entrada[MAX_DIG];
+    fgets(entrada, MAX_DIG, stdin); 
+    sscanf(entrada, "%f", &num);
+    return num;
+}
+
 void main (void){
     char opcionTeclado;
-    int numeroATransformar; 
+    int numeroATransformarBinario;
+    int ordenMatriz; 
+    int determinante;
     float num1;
     float num2;
 
@@ -42,56 +55,86 @@ void main (void){
             {
             case '1':
                 printf("Introduce el primer numero:\n");
-                scanf("%f", &num1);
+                num1 = obtenerDeTeclado();
                 printf("Introduce el segundo numero:\n");
-                scanf("%f", &num2);
+                num2 = obtenerDeTeclado();
                 printf("El resultado de la suma es %.2f\n", sumar(num1, num2));
                 break;
 
             case '2':
                 printf("Introduce el primer numero:\n");
-                scanf("%f", &num1);
+                num1 = obtenerDeTeclado();
                 printf("Introduce el segundo numero:\n");
-                scanf("%f", &num2);
+                num2 = obtenerDeTeclado();
                 printf("El resultado de la resta es %.2f\n", restar(num1, num2));
                 break;
 
             case '3':
                 printf("Introduce el primer numero:\n");
-                scanf("%f", &num1);
+                num1 = obtenerDeTeclado();
                 printf("Introduce el segundo numero:\n");
-                scanf("%f", &num2);
+                num2 = obtenerDeTeclado();
                 printf("El resultado de la multiplicacion es %.2f\n", multiplicar(num1, num2));
                 break;
             
             case '4':
                 printf("Introduce el primer numero:\n");
-                scanf("%f", &num1);
+                num1 = obtenerDeTeclado();
                 printf("Introduce el segundo numero:\n");
-                scanf("%f", &num2);
+                num2 = obtenerDeTeclado();;
                 printf("El resultado de la division es %.2f\n", division(num1, num2));
                 break;
 
             case '5':
                 printf("Introduce la base:\n");
-                scanf("%f", &num1);
+                num1 = obtenerDeTeclado();
                 printf("Introduce el exponente:\n");
-                scanf("%f", &num2);
+                num2 = obtenerDeTeclado();
                 printf("El numero elevado es %.2f\n", elevar(num1, num2));
                 break;
 
             case '6':
                 printf("Introduce el numero para realizar la raiz cuadrada:\n");
-                scanf("%f", &num1);
+                num1 = obtenerDeTeclado();
                 printf("El resultado de la raiz es %.2f\n", raizCuadrada(num1));
+                break;
+
+            case '7':
+                printf("Ingresa el orden de la matriz cuadrada: \n");
+                scanf("%d", &ordenMatriz);
+
+                int **matriz = (int **)malloc(ordenMatriz * sizeof(int *));
+                for (int i = 0; i < ordenMatriz; i++) {
+                    matriz[i] = (int *)malloc(ordenMatriz * sizeof(int));
+                }
+
+                printf("Ingresa los elementos de la matriz:\n");
+                for (int i = 0; i < ordenMatriz; i++) {
+                    for (int j = 0; j < ordenMatriz; j++) {
+                        printf("Ingresa el elemento [%i][%i]: \n", i+1, j+1);
+                        scanf("%d", &matriz[i][j]);
+                    }
+                }
+
+                determinante = determinanteMatriz(matriz, ordenMatriz);
+                
+                printf("La matriz completa:\n");
+                imprimirMatriz(matriz, ordenMatriz);
+                printf("El determinante es: %d\n", determinante);
+
+                for (int i = 0; i < ordenMatriz; i++) {
+                    free(matriz[i]);
+                }
+                free(matriz);
+
                 break;
 
             case '8':
                 printf("Introduce el numero a transformar:\n");
-                scanf("%i", &numeroATransformar);
-                InfoBinario ib = binarios(numeroATransformar);
+                scanf("%i", &numeroATransformarBinario);
+                InfoBinario ib = binarios(numeroATransformarBinario);
 
-                printf("El numero binario de %i es: \n", numeroATransformar);
+                printf("El numero binario de %i es: \n", numeroATransformarBinario);
                 for (int i = 0; i < ib.cantidadBits; i++)
                 {
                     printf("%i", ib.numeroBinario[i]);
