@@ -35,7 +35,10 @@ char mostrarMenu(){
     printf("5. Eleva un numero\n");
     printf("6. Realiza una raiz cuadrada\n");
     printf("7. Calcula el determinante de una matriz cuadrada\n");
-    printf("8. Traduce un numero a binario\n");
+    printf("8. Calcula el sen\n");
+    printf("9. Calcula el cos\n");
+    printf("10. Calcula el tag\n");
+    printf("11. Traduce un numero a binario\n");
     printf("Pulsa 'q' para terminar\n");
 
     fflush(stdout);
@@ -213,8 +216,38 @@ void main (void){
 
                 break;
 
+
             case '8':
                 registrarAccion("Se ha seleccionado la opcion 8 del menu", ficheroLog);
+                double angle = 45.0;
+                double radians = angle * M_PI / 180.0;
+                printf("Introduce el primer numero:\n");
+                num1 = obtenerDeTeclado();
+                printf("El resultado de la suma es %.2f\n", sen(num1));
+                break;
+            
+            case '9':
+                registrarAccion("Se ha seleccionado la opcion 9 del menu", ficheroLog);
+                double angle = 45.0;
+                double radians = angle * M_PI / 180.0;
+                printf("Introduce el primer numero:\n");
+                num1 = obtenerDeTeclado();
+                printf("El resultado de la suma es %.2f\n", cos(num1));
+                break;
+            
+            case '10':
+                registrarAccion("Se ha seleccionado la opcion 10 del menu", ficheroLog);
+                double angle = 45.0;
+                double radians = angle * M_PI / 180.0;
+                printf("Introduce el primer numero:\n");
+                num1 = obtenerDeTeclado();
+                printf("El resultado de la suma es %.2f\n", tag(num1));
+                break;
+
+
+
+            case '11':
+                registrarAccion("Se ha seleccionado la opcion 11 del menu", ficheroLog);
                 printf("Introduce el numero a transformar:\n");
                 scanf("%i", &numeroATransformarBinario);
                 InfoBinario ib = binarios(numeroATransformarBinario);
