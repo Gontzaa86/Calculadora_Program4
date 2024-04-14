@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "formula.h"
 #include "binario.h"
+#include "sqlite3.h"
 #include <time.h>
 
 #define MAX_CAR 20
@@ -67,11 +68,56 @@ void registrarAccion(char *accion, FILE* ficheroLog) {
     fprintf(ficheroLog, "[%s] %s\n", formatoTiempo, accion);
 }
 
+void insertarUsuario(sqlite3 *db, char nombre[MAX_CAR], char contrasenya[MAX_CAR])
+{
+    char sql_insert_usuario[100];
+    sprintf(sql_insert_usuario, "INSERT INTO Usuario (Nombre, contraseña) VALUES ('%s', '%s');", nombre, contrasenya);
+
+    char *zErrMsg = 0;
+    int rc;
+
+    rc = sqlite3_exec(db, sql_insert_usuario, 0, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Error SQL al insertar datos en Usuario: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Datos insertados en Usuario exitosamente\n");
+    }
+}
+
+void insertarOperacion(sqlite3 *db, int operando1, int operando2, int resultado, char* fecha, char* nombre, int id_operacion)
+{
+    char sql_insert_operacion[200];
+    sprintf(sql_insert_operacion, "INSERT INTO Operacion (Operando1, Operando2, Resultado, Fecha, Nombre, ID_Operacion) VALUES (%d, %d, %d, '%s', '%s', %d);", operando1, operando2, resultado, fecha, nombre, id_operacion);
+
+    char *zErrMsg = 0;
+    int rc;
+
+    rc = sqlite3_exec(db, sql_insert_operacion, 0, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Error SQL al insertar datos en Operacion: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Datos insertados en Operacion exitosamente\n");
+    }
+}
+
 void main (void){
 
     FILE* ficheroLog = fopen(FIC_LOG, "a");
 
     registrarAccion("Se ha iniciado el programa", ficheroLog);
+
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    int rc;
+
+    rc = sqlite3_open("database.db", &db);
+    if (rc) {
+        fprintf(stderr, "No se puede abrir la base de datos: %s\n", sqlite3_errmsg(db));
+    } else {
+        fprintf(stderr, "Base de datos abierta exitosamente\n");
+    }
 
     char opcionRegistro;
     int inicioSesionCompletado = 0;
@@ -97,6 +143,7 @@ void main (void){
             printf("Introduce tu contrasenya (maximo 20 caracteres):\n");
             fgets(contrasenya, MAX_CAR, stdin);
             /*funcion para agregar a la base de datos*/
+            insertarUsuario(db, nombre, contrasenya);
             printf("Registro completado correctamente\n");
         }else{
             if (opcionRegistro == '2'){
@@ -139,6 +186,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();
                 printf("El resultado de la suma es %.2f\n", sumar(num1, num2));
+                insertarOperacion(db, num1, num2, sumar(num1, num2), "XX-XX-XXXX", nombre, 1);
                 break;
 
             case '2':
@@ -148,6 +196,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();
                 printf("El resultado de la resta es %.2f\n", restar(num1, num2));
+                insertarOperacion(db, num1, num2, restar(num1, num2), "XX-XX-XXXX", nombre, 2);
                 break;
 
             case '3':
@@ -157,6 +206,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();
                 printf("El resultado de la multiplicacion es %.2f\n", multiplicar(num1, num2));
+                insertarOperacion(db, num1, num2, multiplicar(num1, num2), "XX-XX-XXXX", nombre, 3);
                 break;
             
             case '4':
@@ -166,6 +216,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();;
                 printf("El resultado de la division es %.2f\n", division(num1, num2));
+                insertarOperacion(db, num1, num2, division(num1, num2), "XX-XX-XXXX", nombre, 4);
                 break;
 
             case '5':
@@ -175,6 +226,7 @@ void main (void){
                 printf("Introduce el exponente:\n");
                 num2 = obtenerDeTeclado();
                 printf("El numero elevado es %.2f\n", elevar(num1, num2));
+                insertarOperacion(db, num1, num2, elevar(num1, num2), "XX-XX-XXXX", nombre, 5);
                 break;
 
             case '6':
@@ -223,7 +275,7 @@ void main (void){
                 double radians = angle * M_PI / 180.0;
                 printf("Introduce el primer numero:\n");
                 num1 = obtenerDeTeclado();
-                printf("El resultado de la suma es %.2f\n", sen(num1));
+                printf("El seno es %.2f\n", sen(num1));
                 break;
             
             case '9':
