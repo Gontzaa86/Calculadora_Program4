@@ -243,7 +243,7 @@ void main (void){
                 printf("Introduce el numero para realizar la raiz cuadrada:\n");
                 num1 = obtenerDeTeclado();
                 printf("El resultado de la raiz es %.2f\n", raizCuadrada(num1));
-                insertarOperacion(db, num1, 0, raizCuadrada(num1), obtenerHoraActual(), nombre, 6);
+                insertarOperacion(db, num1, 2, raizCuadrada(num1), obtenerHoraActual(), nombre, 6);
                 break;
 
             case '7':
