@@ -99,3 +99,15 @@ void imprimirMatriz(int **matriz, int orden) {
         printf("\n");
     }
 }
+
+double sen(double x) {
+    return sen(x);
+}
+
+double cos(double x) {
+    return cos(x);
+}
+
+double tag(double x) {
+    return tag(x);
+}
