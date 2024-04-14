@@ -205,7 +205,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();
                 printf("El resultado de la resta es %.2f\n", restar(num1, num2));
-                insertarOperacion(db, num1, num2, restar(num1, num2), "XX-XX-XXXX", nombre, 2);
+                insertarOperacion(db, num1, num2, restar(num1, num2), obtenerHoraActual(), nombre, 2);
                 break;
 
             case '3':
@@ -215,7 +215,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();
                 printf("El resultado de la multiplicacion es %.2f\n", multiplicar(num1, num2));
-                insertarOperacion(db, num1, num2, multiplicar(num1, num2), "XX-XX-XXXX", nombre, 3);
+                insertarOperacion(db, num1, num2, multiplicar(num1, num2), obtenerHoraActual(), nombre, 3);
                 break;
             
             case '4':
@@ -225,7 +225,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();;
                 printf("El resultado de la division es %.2f\n", division(num1, num2));
-                insertarOperacion(db, num1, num2, division(num1, num2), "XX-XX-XXXX", nombre, 4);
+                insertarOperacion(db, num1, num2, division(num1, num2), obtenerHoraActual(), nombre, 4);
                 break;
 
             case '5':
@@ -235,7 +235,7 @@ void main (void){
                 printf("Introduce el exponente:\n");
                 num2 = obtenerDeTeclado();
                 printf("El numero elevado es %.2f\n", elevar(num1, num2));
-                insertarOperacion(db, num1, num2, elevar(num1, num2), "XX-XX-XXXX", nombre, 5);
+                insertarOperacion(db, num1, num2, elevar(num1, num2), obtenerHoraActual(), nombre, 5);
                 break;
 
             case '6':
@@ -243,6 +243,7 @@ void main (void){
                 printf("Introduce el numero para realizar la raiz cuadrada:\n");
                 num1 = obtenerDeTeclado();
                 printf("El resultado de la raiz es %.2f\n", raizCuadrada(num1));
+                insertarOperacion(db, num1, 0, raizCuadrada(num1), obtenerHoraActual(), nombre, 6);
                 break;
 
             case '7':
@@ -278,7 +279,7 @@ void main (void){
                 break;
 
             case '8':
-                registrarAccion("Se ha seleccionado la opcion 11 del menu", ficheroLog);
+                registrarAccion("Se ha seleccionado la opcion 8 del menu", ficheroLog);
                 printf("Introduce el numero a transformar:\n");
                 scanf("%i", &numeroATransformarBinario);
                 InfoBinario ib = binarios(numeroATransformarBinario);
