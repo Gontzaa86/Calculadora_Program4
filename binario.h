@@ -9,4 +9,6 @@ typedef struct
 
 InfoBinario binarios(int aTransformar);
 
+int binario_a_decimal(long long binario);
+
 #endif
