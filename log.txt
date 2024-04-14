@@ -1,0 +1,14 @@
+[14/04/24 11:12:42] Se ha iniciado el programa
+[14/04/24 11:12:46] Se ha iniciado registro de cuenta
+[14/04/24 11:12:55] Se ha iniciado el inicio de sesion
+[14/04/24 11:13:00] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 11:13:02] Se ha seleccionado la opcion 8 del menu
+[14/04/24 11:13:07] Se ha terminado el programa
+[14/04/24 11:13:59] Se ha iniciado el programa
+[14/04/24 11:14:01] Se ha iniciado registro de cuenta
+[14/04/24 11:14:08] Se ha iniciado el inicio de sesion
+[14/04/24 11:14:13] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 11:14:18] Se ha seleccionado la opcion 1 del menu
+[14/04/24 11:14:25] Se ha seleccionado la opcion 4 del menu
+[14/04/24 11:14:32] Se ha seleccionado la opcion 8 del menu
+[14/04/24 11:14:38] Se ha terminado el programa
