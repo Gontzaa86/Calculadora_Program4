@@ -5,6 +5,7 @@
 #include "binario.h"
 #include "sqlite3.h"
 #include <time.h>
+#include <math.h>
 
 #define MAX_CAR 20
 #define MAX_DIG 10
@@ -37,6 +38,7 @@ char mostrarMenu(){
     printf("6. Realiza una raiz cuadrada\n");
     printf("7. Calcula el determinante de una matriz cuadrada\n");
     printf("8. Traduce un numero a binario\n");
+    printf("9. Traduce de binario a un numero decimal\n");
     printf("Pulsa 'q' para terminar\n");
 
     fflush(stdout);
@@ -280,7 +282,7 @@ void main (void){
 
             case '8':
                 registrarAccion("Se ha seleccionado la opcion 8 del menu", ficheroLog);
-                printf("Introduce el numero a transformar:\n");
+                printf("Introduce el numero a transformar a binario:\n");
                 scanf("%i", &numeroATransformarBinario);
                 InfoBinario ib = binarios(numeroATransformarBinario);
 
@@ -294,6 +296,14 @@ void main (void){
 
             default:
                 break;
+            
+            case'9':
+                registrarAccion("Se ha seleccionado la opcion 9 del menu", ficheroLog);
+                long long binario;
+                printf("Ingrese un numero binario: ");
+                scanf("%lld", &binario);
+                int decimal = binario_a_decimal(binario);
+                printf("El equivalente decimal es: %d\n", decimal);
         }
         }else{
             printf("Has introducido una opcion no disponible\n");
