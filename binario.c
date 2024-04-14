@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "binario.h"
 
 InfoBinario binarios(int aTransformar)
@@ -36,4 +37,21 @@ InfoBinario binarios(int aTransformar)
     ib.cantidadBits = contador;
 
     return ib;
+}
+
+int binario_a_decimal(long long binario) {
+    int decimal = 0, exponente = 0;
+
+    while (binario != 0) {
+        
+        int digito = binario % 10;
+
+        decimal += digito * pow(2, exponente);
+        
+        ++exponente;
+        
+        binario /= 10;
+    }
+    
+    return decimal;
 }
