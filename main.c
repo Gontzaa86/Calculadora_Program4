@@ -36,10 +36,7 @@ char mostrarMenu(){
     printf("5. Eleva un numero\n");
     printf("6. Realiza una raiz cuadrada\n");
     printf("7. Calcula el determinante de una matriz cuadrada\n");
-    printf("8. Calcula el sen\n");
-    printf("9. Calcula el cos\n");
-    printf("10. Calcula el tag\n");
-    printf("11. Traduce un numero a binario\n");
+    printf("8. Traduce un numero a binario\n");
     printf("Pulsa 'q' para terminar\n");
 
     fflush(stdout);
@@ -68,6 +65,17 @@ void registrarAccion(char *accion, FILE* ficheroLog) {
     fprintf(ficheroLog, "[%s] %s\n", formatoTiempo, accion);
 }
 
+char* obtenerHoraActual() {
+    time_t tiempo_actual = time(NULL);
+    struct tm *local = localtime(&tiempo_actual);
+    
+    char *cadena_hora = (char *)malloc(11 * sizeof(char));
+    
+    strftime(cadena_hora, 11, "%d-%m-%Y", local);
+    
+    return cadena_hora;
+}
+
 void insertarUsuario(sqlite3 *db, char nombre[MAX_CAR], char contrasenya[MAX_CAR])
 {
     char sql_insert_usuario[100];
@@ -81,7 +89,7 @@ void insertarUsuario(sqlite3 *db, char nombre[MAX_CAR], char contrasenya[MAX_CAR
         fprintf(stderr, "Error SQL al insertar datos en Usuario: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     } else {
-        fprintf(stdout, "Datos insertados en Usuario exitosamente\n");
+        /*fprintf(stdout, "Datos insertados en Usuario exitosamente\n");*/
     }
 }
 
@@ -98,9 +106,10 @@ void insertarOperacion(sqlite3 *db, int operando1, int operando2, int resultado,
         fprintf(stderr, "Error SQL al insertar datos en Operacion: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     } else {
-        fprintf(stdout, "Datos insertados en Operacion exitosamente\n");
+        /*fprintf(stdout, "Datos insertados en Operacion exitosamente\n");*/
     }
 }
+
 
 void main (void){
 
@@ -186,7 +195,7 @@ void main (void){
                 printf("Introduce el segundo numero:\n");
                 num2 = obtenerDeTeclado();
                 printf("El resultado de la suma es %.2f\n", sumar(num1, num2));
-                insertarOperacion(db, num1, num2, sumar(num1, num2), "XX-XX-XXXX", nombre, 1);
+                insertarOperacion(db, num1, num2, sumar(num1, num2), obtenerHoraActual(), nombre, 1);
                 break;
 
             case '2':
@@ -268,37 +277,7 @@ void main (void){
 
                 break;
 
-
             case '8':
-                registrarAccion("Se ha seleccionado la opcion 8 del menu", ficheroLog);
-                double angle = 45.0;
-                double radians = angle * M_PI / 180.0;
-                printf("Introduce el primer numero:\n");
-                num1 = obtenerDeTeclado();
-                printf("El seno es %.2f\n", sen(num1));
-                break;
-            
-            case '9':
-                registrarAccion("Se ha seleccionado la opcion 9 del menu", ficheroLog);
-                double angle = 45.0;
-                double radians = angle * M_PI / 180.0;
-                printf("Introduce el primer numero:\n");
-                num1 = obtenerDeTeclado();
-                printf("El resultado de la suma es %.2f\n", cos(num1));
-                break;
-            
-            case '10':
-                registrarAccion("Se ha seleccionado la opcion 10 del menu", ficheroLog);
-                double angle = 45.0;
-                double radians = angle * M_PI / 180.0;
-                printf("Introduce el primer numero:\n");
-                num1 = obtenerDeTeclado();
-                printf("El resultado de la suma es %.2f\n", tag(num1));
-                break;
-
-
-
-            case '11':
                 registrarAccion("Se ha seleccionado la opcion 11 del menu", ficheroLog);
                 printf("Introduce el numero a transformar:\n");
                 scanf("%i", &numeroATransformarBinario);
