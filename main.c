@@ -10,6 +10,7 @@
 #define MAX_CAR 20
 #define MAX_DIG 10
 #define FIC_LOG "log.txt"
+#define MAX_OPERACION 6
 
 char registroMenu(){
 
@@ -112,6 +113,35 @@ void insertarOperacion(sqlite3 *db, int operando1, int operando2, int resultado,
     }
 }
 
+int contar_id_operacion(sqlite3 *db, int *num_operaciones) {
+    sqlite3_stmt *stmt;
+    int rc;
+    const char *sql;
+
+    for (int i = 0; i <= MAX_OPERACION; i++) {
+        num_operaciones[i] = 0;
+    }
+    sql = "SELECT ID_operacion FROM Operacion";
+
+    rc = sqlite3_prepare_v2(db, sql, -1, &stmt, NULL);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Failed to prepare statement: %s\n", sqlite3_errmsg(db));
+        sqlite3_close(db);
+        return rc;
+    }
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        int id_operacion = sqlite3_column_int(stmt, 0);
+        if (id_operacion >= 1 && id_operacion <= MAX_OPERACION) {
+            num_operaciones[id_operacion]++;
+        }
+    }
+
+    sqlite3_finalize(stmt);
+
+    return SQLITE_OK;
+}
+
 
 void main (void){
 
@@ -122,6 +152,7 @@ void main (void){
     sqlite3 *db;
     char *zErrMsg = 0;
     int rc;
+    int num_operaciones[MAX_OPERACION + 1];
 
     rc = sqlite3_open("database.db", &db);
     if (rc) {
@@ -250,7 +281,7 @@ void main (void){
 
             case '7':
                 registrarAccion("Se ha seleccionado la opcion 7 del menu", ficheroLog);
-                printf("Ingresa el orden de la matriz cuadrada: \n");
+                /*printf("Ingresa el orden de la matriz cuadrada: \n");
                 scanf("%d", &ordenMatriz);
 
                 matriz = (int **)malloc(ordenMatriz * sizeof(int *));
@@ -276,7 +307,9 @@ void main (void){
                 for (int i = 0; i < ordenMatriz; i++) {
                     free(matriz[i]);
                 }
-                free(matriz);
+                free(matriz);*/
+                contar_id_operacion(db, num_operaciones);
+                printf("Numero de sumas: %i\n", num_operaciones[1]);
 
                 break;
 
@@ -314,4 +347,5 @@ void main (void){
     } while (opcionCalc != 'q');
     
     fclose(ficheroLog);
+    /*sqlite3_close(db);*/
 }
