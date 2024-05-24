@@ -41,18 +41,24 @@ int main() {
         return 1;
     }
 
-    // Solicitar la elección al usuario
-    std::cout << "Ingrese 1 para abrir el archivo ejecutable o 0 para cerrar la sesión: ";
+    // Variable para almacenar la elección del usuario
     char choice;
-    std::cin >> choice;
 
-    // Enviar la elección al servidor
-    send(client_fd, &choice, sizeof(choice), 0);
+    // Bucle para enviar múltiples opciones al servidor
+    do {
+        // Solicitar la elección al usuario
+        std::cout << "Ingrese 1 para abrir el archivo ejecutable o 0 para cerrar la sesión: ";
+        std::cin >> choice;
 
-    // Si elige 1, abrir el archivo ejecutable
-    if (choice == '1') {
-        system("main.exe");
-    }
+        // Enviar la elección al servidor
+        send(client_fd, &choice, sizeof(choice), 0);
+
+        // Si elige 1, abrir el archivo ejecutable
+        if (choice == '1') {
+            system("main.exe");
+        }
+
+    } while (choice != '0');
 
     // Cerrar el socket
     closesocket(client_fd);
