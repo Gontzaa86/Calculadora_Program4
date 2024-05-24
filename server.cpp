@@ -74,7 +74,11 @@ int main() {
             } else if (buffer[0] == '0') {
                 std::cout << "Cerrando sesión..." << std::endl;
                 break; // Salir del bucle y cerrar la conexión con el cliente
-            } else {
+            }else if (buffer[0] == '2'){
+                std::cout << "Encendiendo LEDs..." << std::endl;
+            } else if (buffer[0] == '3'){
+                std::cout << "Procesando grafico..." << std::endl; 
+            }else {
                 std::cerr << "Elección no válida." << std::endl;
             }
         }
