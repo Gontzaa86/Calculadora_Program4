@@ -1,5 +1,6 @@
 #include "binario.h"
 #include <cmath>
+#include <string>
 
 std::string transformarBinario(int numero) 
 {
