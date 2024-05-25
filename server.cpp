@@ -12,8 +12,8 @@ void mostrarMenu() {
     std::cout << "Menu de opciones:\n";
     std::cout << "1. Procesar calculadora\n";
     std::cout << "2. Encender LEDs\n";
-    std::cout << "3. Procesar grafico\n";
-    std::cout << "0. Cerrar sesion\n";
+    std::cout << "3. Procesar gráfico\n";
+    std::cout << "0. Cerrar sesión\n";
 }
 
 int main() {
@@ -57,10 +57,10 @@ int main() {
         return 1;
     }
 
+    std::cout << "Esperando conexiones...\n";
+
     // Bucle principal del servidor para manejar conexiones
     while (true) {
-        std::cout << "Esperando conexiones...\n";
-
         // Aceptar una conexión entrante
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address, &addrlen)) == INVALID_SOCKET) {
             std::cerr << "Error al aceptar la conexión: " << WSAGetLastError() << std::endl;
@@ -90,8 +90,11 @@ int main() {
             } else if (buffer[0] == '3') {
                 std::cout << "Procesando grafico..." << std::endl;
             } else if (buffer[0] == '0') {
-                std::cout << "Cerrando sesióon..." << std::endl;
-                break; // Salir del bucle y cerrar la conexión con el cliente
+                std::cout << "Cerrando sesion..." << std::endl;
+                closesocket(new_socket);
+                closesocket(server_fd);
+                WSACleanup();
+                return 0; // Salir del programa
             } else {
                 std::cerr << "Eleccion no valida." << std::endl;
             }
