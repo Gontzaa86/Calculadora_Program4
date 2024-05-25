@@ -11,6 +11,8 @@
 #define MAX_DIG 10
 #define FIC_LOG "log.txt"
 #define MAX_OPERACION 6
+#define ALTURA_GRAFICO 10
+const char* operaciones[] = {"Suma", "Resta", "Multi", "Divis", "Expon", "RaizC"};
 
 char registroMenu(){
 
@@ -37,7 +39,7 @@ char mostrarMenu(){
     printf("4. Realiza una division\n");
     printf("5. Eleva un numero\n");
     printf("6. Realiza una raiz cuadrada\n");
-    printf("7. Calcula el determinante de una matriz cuadrada\n");
+    printf("7. Dibujar grafico con las frecuencias del BD\n");
     printf("8. Traduce un numero a binario\n");
     printf("9. Traduce de binario a un numero decimal\n");
     printf("Pulsa 'q' para terminar\n");
@@ -142,6 +144,41 @@ int contar_id_operacion(sqlite3 *db, int *num_operaciones) {
     return SQLITE_OK;
 }
 
+void dibujarGraficoFrecu(int* num_operaciones){
+    int valorMax = 0;
+    for (int i = 1; i < MAX_OPERACION+1; i++){
+        if (num_operaciones[i] > valorMax){
+            valorMax = num_operaciones[i];
+        }
+    }
+
+    int escala = valorMax > ALTURA_GRAFICO ? (valorMax + ALTURA_GRAFICO - 1) / ALTURA_GRAFICO : 1;
+
+    printf("\nGRAFICO:\n\n");
+    for (int nivel = ALTURA_GRAFICO; nivel > 0; nivel--) {
+        printf("%2i |", nivel * escala);
+        for (int i = 1; i < MAX_OPERACION+1; i++) {
+            if (num_operaciones[i] / escala >= nivel) {
+                printf("  ||  ");
+            } else {
+                printf("      ");
+            }
+        }
+        printf("\n");
+    }
+    printf(" 0 |");
+    for (int i = 0; i < MAX_OPERACION; i++) {
+        printf("------");
+    }
+    printf("\n");
+
+    printf("    ");
+    for (int i = 0; i < MAX_OPERACION; i++) {
+        printf("%5s ", operaciones[i]);
+    }
+    printf("\n");
+    
+}
 
 void main (void){
 
@@ -309,7 +346,7 @@ void main (void){
                 }
                 free(matriz);*/
                 contar_id_operacion(db, num_operaciones);
-                printf("Numero de sumas: %i\n", num_operaciones[1]);
+                dibujarGraficoFrecu(num_operaciones);
 
                 break;
 
