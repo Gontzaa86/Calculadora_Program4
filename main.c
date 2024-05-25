@@ -384,5 +384,5 @@ void main (void){
     } while (opcionCalc != 'q');
     
     fclose(ficheroLog);
-    /*sqlite3_close(db);*/
+    sqlite3_close(db);
 }

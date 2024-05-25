@@ -12,8 +12,7 @@ void mostrarMenu() {
     std::cout << "Menu de opciones:\n";
     std::cout << "1. Procesar calculadora\n";
     std::cout << "2. Encender LEDs\n";
-    std::cout << "3. Procesar gráfico\n";
-    std::cout << "0. Cerrar sesión\n";
+    std::cout << "0. Cerrar sesion\n";
 }
 
 int main() {
@@ -87,8 +86,6 @@ int main() {
                 std::cout << "Procesando calculadora..." << std::endl;
             } else if (buffer[0] == '2') {
                 std::cout << "Encendiendo LEDs..." << std::endl;
-            } else if (buffer[0] == '3') {
-                std::cout << "Procesando grafico..." << std::endl;
             } else if (buffer[0] == '0') {
                 std::cout << "Cerrando sesion..." << std::endl;
                 closesocket(new_socket);
