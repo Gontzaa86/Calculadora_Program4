@@ -8,6 +8,14 @@
 #define SERVER_PORT 8080
 #define BUFFER_SIZE 1024
 
+void mostrarMenu() {
+    std::cout << "Menu de opciones:\n";
+    std::cout << "1. Procesar calculadora\n";
+    std::cout << "2. Encender LEDs\n";
+    std::cout << "3. Procesar grafico\n";
+    std::cout << "0. Cerrar sesion\n";
+}
+
 int main() {
     WSADATA wsa;
     SOCKET server_fd, new_socket;
@@ -61,25 +69,31 @@ int main() {
             return 1;
         }
 
+        std::cout << "Conexion establecida con el cliente.\n";
+        mostrarMenu();
+
         // Bucle para mantener la conexión con el cliente
         while (true) {
             // Leer el mensaje del cliente
-            recv(new_socket, buffer, BUFFER_SIZE, 0);
+            int valread = recv(new_socket, buffer, BUFFER_SIZE, 0);
+            if (valread <= 0) {
+                std::cerr << "Error al leer del cliente o conexion cerrada: " << WSAGetLastError() << std::endl;
+                break;
+            }
             std::cout << "Mensaje recibido del cliente: " << buffer << std::endl;
 
             // Procesar la elección del cliente
             if (buffer[0] == '1') {
                 std::cout << "Procesando calculadora..." << std::endl;
-                // Aquí puedes agregar el código para ejecutar el archivo ejecutable en el cliente
-            } else if (buffer[0] == '0') {
-                std::cout << "Cerrando sesión..." << std::endl;
-                break; // Salir del bucle y cerrar la conexión con el cliente
-            }else if (buffer[0] == '2'){
+            } else if (buffer[0] == '2') {
                 std::cout << "Encendiendo LEDs..." << std::endl;
-            } else if (buffer[0] == '3'){
-                std::cout << "Procesando grafico..." << std::endl; 
-            }else {
-                std::cerr << "Elección no válida." << std::endl;
+            } else if (buffer[0] == '3') {
+                std::cout << "Procesando grafico..." << std::endl;
+            } else if (buffer[0] == '0') {
+                std::cout << "Cerrando sesióon..." << std::endl;
+                break; // Salir del bucle y cerrar la conexión con el cliente
+            } else {
+                std::cerr << "Eleccion no valida." << std::endl;
             }
         }
 

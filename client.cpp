@@ -47,10 +47,10 @@ int main() {
     // Bucle para enviar múltiples opciones al servidor
     do {
         // Solicitar la elección al usuario
-        std::cout << "Ingrese 0 para cerrar la sesión: ";
-        std::cout << "Ingrese 1 para abrir el archivo ejecutable";
-        std::cout << "Ingrese 2 para abrir activar LEDs";
-        std::cout << "Ingrese 3 para procesar grafico";
+        std::cout << "Ingrese 0 para cerrar la sesion: \n";
+        std::cout << "Ingrese 1 para abrir el archivo ejecutable: \n";
+        std::cout << "Ingrese 2 para abrir activar LEDs: \n";
+        std::cout << "Ingrese 3 para procesar grafico: \n";
         std::cin >> choice;
 
         // Enviar la elección al servidor
