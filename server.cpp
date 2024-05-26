@@ -2,10 +2,11 @@
 #include <iostream>
 #include <winsock2.h>
 #include <cstdlib>
+#include "util.cpp"
 
 #pragma comment(lib, "ws2_32.lib")
 
-#define SERVER_PORT 8080
+#define SERVER_PORT stoi(leerDatosConexion(1))
 #define BUFFER_SIZE 1024
 
 void mostrarMenu() {

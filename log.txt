@@ -161,3 +161,17 @@
 [25/05/24 17:50:07] El usuario ha completado el resgitro, se inicia la calculadora
 [25/05/24 17:50:09] Se ha seleccionado la opcion 7 del menu
 [25/05/24 17:50:13] Se ha terminado el programa
+[26/05/24 12:15:08] Se ha iniciado el programa
+[26/05/24 12:15:11] Se ha iniciado el inicio de sesion
+[26/05/24 12:15:12] El usuario ha completado el resgitro, se inicia la calculadora
+[26/05/24 12:15:13] Se ha terminado el programa
+[26/05/24 12:19:17] Se ha iniciado el programa
+[26/05/24 12:19:19] Se ha iniciado el inicio de sesion
+[26/05/24 12:19:20] El usuario ha completado el resgitro, se inicia la calculadora
+[26/05/24 12:19:24] Se ha seleccionado la opcion 7 del menu
+[26/05/24 12:19:27] Se ha terminado el programa
+[26/05/24 12:34:17] Se ha iniciado el programa
+[26/05/24 12:34:18] Se ha iniciado el inicio de sesion
+[26/05/24 12:34:19] El usuario ha completado el resgitro, se inicia la calculadora
+[26/05/24 12:34:20] Se ha seleccionado la opcion 7 del menu
+[26/05/24 12:34:22] Se ha terminado el programa
