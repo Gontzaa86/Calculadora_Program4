@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "sqlite3.h"
+
+int main() {
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    int rc;
+
+    // Abrir la conexión a la base de datos
+    rc = sqlite3_open("database.db", &db);
+    if (rc) {
+        fprintf(stderr, "No se puede abrir la base de datos: %s\n", sqlite3_errmsg(db));
+        return(0);
+    } else {
+        fprintf(stderr, "Base de datos abierta exitosamente\n");
+    }
+
+    // Consulta SQL para insertar datos en la tabla Usuario
+    const char *sql_insert_usuario = "INSERT INTO Usuario (Nombre, contraseña) VALUES ('usuario1', 'contraseña1');";
+
+    // Consulta SQL para insertar datos en la tabla Menu_Operacion
+    const char *sql_insert_menu_operacion = "INSERT INTO Menu_Operacion (ID_Operacion, Nombre_Operacion) VALUES (1, 'operacion1');";
+
+    // Consulta SQL para insertar datos en la tabla Operacion
+    const char *sql_insert_operacion = "INSERT INTO Operacion (Operando1, Operando2, Resultado, Fecha, Nombre, ID_Operacion) VALUES (10, 20, 30, '2024-04-14', 'usuario1', 1);";
+
+    // Ejecutar las consultas SQL de inserción
+    rc = sqlite3_exec(db, sql_insert_usuario, 0, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Error SQL al insertar datos en Usuario: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Datos insertados en Usuario exitosamente\n");
+    }
+
+    rc = sqlite3_exec(db, sql_insert_menu_operacion, 0, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Error SQL al insertar datos en Menu_Operacion: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Datos insertados en Menu_Operacion exitosamente\n");
+    }
+
+    rc = sqlite3_exec(db, sql_insert_operacion, 0, 0, &zErrMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Error SQL al insertar datos en Operacion: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    } else {
+        fprintf(stdout, "Datos insertados en Operacion exitosamente\n");
+    }
+
+    // Cerrar la conexión a la base de datos
+    sqlite3_close(db);
+    return 0;
+}

@@ -1,0 +1,197 @@
+[14/04/24 11:12:42] Se ha iniciado el programa
+[14/04/24 11:12:46] Se ha iniciado registro de cuenta
+[14/04/24 11:12:55] Se ha iniciado el inicio de sesion
+[14/04/24 11:13:00] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 11:13:02] Se ha seleccionado la opcion 8 del menu
+[14/04/24 11:13:07] Se ha terminado el programa
+[14/04/24 11:13:59] Se ha iniciado el programa
+[14/04/24 11:14:01] Se ha iniciado registro de cuenta
+[14/04/24 11:14:08] Se ha iniciado el inicio de sesion
+[14/04/24 11:14:13] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 11:14:18] Se ha seleccionado la opcion 1 del menu
+[14/04/24 11:14:25] Se ha seleccionado la opcion 4 del menu
+[14/04/24 11:14:32] Se ha seleccionado la opcion 8 del menu
+[14/04/24 11:14:38] Se ha terminado el programa
+[14/04/24 21:11:00] Se ha iniciado el programa
+[14/04/24 21:11:12] Se ha iniciado registro de cuenta
+[14/04/24 21:11:27] Se ha iniciado el inicio de sesion
+[14/04/24 21:11:36] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 21:11:38] Se ha seleccionado la opcion 1 del menu
+[14/04/24 21:11:42] Se ha terminado el programa
+[14/04/24 21:38:20] Se ha iniciado el programa
+[14/04/24 21:38:23] Se ha iniciado el inicio de sesion
+[14/04/24 21:38:31] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 21:38:34] Se ha seleccionado la opcion 1 del menu
+[14/04/24 21:38:47] Se ha terminado el programa
+[14/04/24 21:56:47] Se ha iniciado el programa
+[14/04/24 21:56:51] Se ha iniciado registro de cuenta
+[14/04/24 21:57:05] Se ha iniciado el inicio de sesion
+[14/04/24 21:57:11] El usuario ha completado el resgitro, se inicia la calculadora
+[14/04/24 21:57:20] Se ha seleccionado la opcion 5 del menu
+[14/04/24 21:57:36] Se ha terminado el programa
+[24/05/24 16:36:46] Se ha iniciado el programa
+[24/05/24 16:36:50] Se ha iniciado registro de cuenta
+[24/05/24 16:37:00] Se ha iniciado el inicio de sesion
+[24/05/24 16:37:06] El usuario ha completado el resgitro, se inicia la calculadora
+[24/05/24 16:37:10] Se ha seleccionado la opcion 1 del menu
+[24/05/24 16:37:19] Se ha terminado el programa
+[24/05/24 19:35:11] Se ha iniciado el programa
+[24/05/24 19:35:13] Se ha iniciado el inicio de sesion
+[24/05/24 19:35:15] El usuario ha completado el resgitro, se inicia la calculadora
+[24/05/24 19:35:20] Se ha terminado el programa
+[24/05/24 19:39:46] Se ha iniciado el programa
+[24/05/24 19:39:48] Se ha iniciado el inicio de sesion
+[24/05/24 19:39:48] El usuario ha completado el resgitro, se inicia la calculadora
+[24/05/24 19:39:50] Se ha seleccionado la opcion 7 del menu
+[24/05/24 19:40:13] Se ha terminado el programa
+[24/05/24 19:41:12] Se ha iniciado el programa
+[24/05/24 19:41:14] Se ha iniciado el inicio de sesion
+[24/05/24 19:41:15] El usuario ha completado el resgitro, se inicia la calculadora
+[24/05/24 19:41:17] Se ha seleccionado la opcion 7 del menu
+[24/05/24 19:41:21] Se ha terminado el programa
+[25/05/24 12:59:18] Se ha iniciado el programa
+[25/05/24 12:59:20] Se ha iniciado el inicio de sesion
+[25/05/24 12:59:21] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 12:59:24] Se ha seleccionado la opcion 7 del menu
+[25/05/24 12:59:45] Se ha terminado el programa
+[25/05/24 13:00:49] Se ha iniciado el programa
+[25/05/24 13:00:51] Se ha iniciado el inicio de sesion
+[25/05/24 13:00:52] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:00:53] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:01:02] Se ha terminado el programa
+[25/05/24 13:02:00] Se ha iniciado el programa
+[25/05/24 13:02:02] Se ha iniciado el inicio de sesion
+[25/05/24 13:02:03] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:02:04] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:02:13] Se ha terminado el programa
+[25/05/24 13:02:42] Se ha iniciado el programa
+[25/05/24 13:02:43] Se ha iniciado el inicio de sesion
+[25/05/24 13:02:44] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:02:46] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:03:00] Se ha seleccionado la opcion 1 del menu
+[25/05/24 13:03:06] Se ha terminado el programa
+[25/05/24 13:03:49] Se ha iniciado el programa
+[25/05/24 13:03:51] Se ha iniciado el inicio de sesion
+[25/05/24 13:03:52] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:03:53] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:04:06] Se ha terminado el programa
+[25/05/24 13:04:46] Se ha iniciado el programa
+[25/05/24 13:04:47] Se ha iniciado el inicio de sesion
+[25/05/24 13:04:48] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:04:49] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:05:02] Se ha terminado el programa
+[25/05/24 13:05:45] Se ha iniciado el programa
+[25/05/24 13:05:46] Se ha iniciado el inicio de sesion
+[25/05/24 13:05:47] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:05:49] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:05:54] Se ha terminado el programa
+[25/05/24 13:06:49] Se ha iniciado el programa
+[25/05/24 13:06:51] Se ha iniciado el inicio de sesion
+[25/05/24 13:06:52] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:06:54] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:07:00] Se ha terminado el programa
+[25/05/24 13:07:32] Se ha iniciado el programa
+[25/05/24 13:07:33] Se ha iniciado el inicio de sesion
+[25/05/24 13:07:34] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:07:36] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:09:36] Se ha terminado el programa
+[25/05/24 13:09:45] Se ha iniciado el programa
+[25/05/24 13:09:46] Se ha iniciado el inicio de sesion
+[25/05/24 13:09:47] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:09:48] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:10:23] Se ha terminado el programa
+[25/05/24 13:11:42] Se ha iniciado el programa
+[25/05/24 13:11:44] Se ha iniciado el inicio de sesion
+[25/05/24 13:11:45] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:11:46] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:12:00] Se ha terminado el programa
+[25/05/24 13:16:44] Se ha iniciado el programa
+[25/05/24 13:16:45] Se ha iniciado el inicio de sesion
+[25/05/24 13:16:46] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:16:48] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:17:15] Se ha terminado el programa
+[25/05/24 13:17:58] Se ha iniciado el programa
+[25/05/24 13:18:00] Se ha iniciado el inicio de sesion
+[25/05/24 13:18:00] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:18:02] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:18:12] Se ha terminado el programa
+[25/05/24 13:18:44] Se ha iniciado el programa
+[25/05/24 13:18:45] Se ha iniciado el inicio de sesion
+[25/05/24 13:18:46] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:18:51] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:19:07] Se ha terminado el programa
+[25/05/24 13:19:35] Se ha iniciado el programa
+[25/05/24 13:19:36] Se ha iniciado el inicio de sesion
+[25/05/24 13:19:38] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:19:39] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:21:04] Se ha terminado el programa
+[25/05/24 13:22:00] Se ha iniciado el programa
+[25/05/24 13:22:01] Se ha iniciado el inicio de sesion
+[25/05/24 13:22:02] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:22:06] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:22:16] Se ha terminado el programa
+[25/05/24 13:22:56] Se ha iniciado el programa
+[25/05/24 13:22:58] Se ha iniciado el inicio de sesion
+[25/05/24 13:22:59] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:23:03] Se ha seleccionado la opcion 6 del menu
+[25/05/24 13:23:08] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:23:18] Se ha terminado el programa
+[25/05/24 13:24:12] Se ha iniciado el programa
+[25/05/24 13:24:14] Se ha iniciado el inicio de sesion
+[25/05/24 13:24:15] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:24:23] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:24:38] Se ha terminado el programa
+[25/05/24 13:25:31] Se ha iniciado el programa
+[25/05/24 13:25:32] Se ha iniciado el inicio de sesion
+[25/05/24 13:25:33] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:25:34] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:25:47] Se ha terminado el programa
+[25/05/24 13:25:59] Se ha iniciado el programa
+[25/05/24 13:26:01] Se ha iniciado el inicio de sesion
+[25/05/24 13:26:01] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 13:26:03] Se ha seleccionado la opcion 7 del menu
+[25/05/24 13:28:14] Se ha terminado el programa
+[25/05/24 15:04:42] Se ha iniciado el programa
+[25/05/24 15:04:45] Se ha iniciado el inicio de sesion
+[25/05/24 15:04:47] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 15:04:55] Se ha seleccionado la opcion 7 del menu
+[25/05/24 15:05:04] Se ha terminado el programa
+[25/05/24 15:06:25] Se ha iniciado el programa
+[25/05/24 15:06:28] El usuario ha introducido una opcion de registro no disponible
+[25/05/24 15:06:35] Se ha iniciado el inicio de sesion
+[25/05/24 15:06:37] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 15:06:52] Se ha terminado el programa
+[25/05/24 15:06:58] Se ha iniciado el programa
+[25/05/24 15:07:01] Se ha iniciado el inicio de sesion
+[25/05/24 15:07:03] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 15:07:04] Se ha seleccionado la opcion 1 del menu
+[25/05/24 15:07:08] Se ha terminado el programa
+[25/05/24 15:12:12] Se ha iniciado el programa
+[25/05/24 15:12:18] Se ha iniciado el inicio de sesion
+[25/05/24 15:12:23] El usuario ha completado el resgitro, se inicia la calculadora
+[25/05/24 15:12:30] Se ha terminado el programa
+[05/06/23 19:41:50] Se ha iniciado el programa
+[05/06/23 19:41:56] Se ha iniciado el inicio de sesion
+[05/06/23 19:42:00] El usuario ha completado el resgitro, se inicia la calculadora
+[05/06/23 19:42:09] Se ha seleccionado la opcion 7 del menu
+[05/06/23 19:42:09] El usuario ha elegido una funcion no disponible
+[05/06/23 19:42:19] Se ha seleccionado la opcion 7 del menu
+[05/06/23 19:42:19] El usuario ha elegido una funcion no disponible
+[05/06/23 19:42:19] El usuario ha elegido una funcion no disponible
+[05/06/23 19:42:24] Se ha seleccionado la opcion 9 del menu
+[05/06/23 19:42:26] El usuario ha elegido una funcion no disponible
+[05/06/23 19:42:29] Se ha terminado el programa
+[05/06/23 21:25:27] Se ha iniciado el programa
+[05/06/23 21:25:30] Se ha iniciado el inicio de sesion
+[05/06/23 21:25:31] El usuario ha completado el resgitro, se inicia la calculadora
+[05/06/23 21:25:40] Se ha seleccionado la opcion 1 del menu
+[05/06/23 21:25:45] Se ha seleccionado la opcion 7 del menu
+[05/06/23 21:25:45] El usuario ha elegido una funcion no disponible
+[05/06/23 21:25:55] Se ha terminado el programa
+[27/05/24 23:24:43] Se ha iniciado el programa
+[27/05/24 23:24:45] Se ha iniciado el inicio de sesion
+[27/05/24 23:24:47] El usuario ha completado el resgitro, se inicia la calculadora
+[27/05/24 23:24:51] Se ha seleccionado la opcion 7 del menu
+[27/05/24 23:25:03] Se ha seleccionado la opcion 4 del menu
+[27/05/24 23:25:23] Se ha seleccionado la opcion 7 del menu
+[27/05/24 23:25:29] Se ha terminado el programa
